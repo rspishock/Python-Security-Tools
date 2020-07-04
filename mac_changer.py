@@ -39,7 +39,7 @@ def get_arguments():
 
     # add call to random_mac
     if options.mac == 'random':
-        generate_mac()
+        options.mac = generate_mac()
 
     if not options.interface:
         parser.error('[-] Please specify an interface, use --help for more info.')
