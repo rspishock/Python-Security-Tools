@@ -7,14 +7,13 @@ import random
 
 def generate_mac():
     """Generates a random MAC address"""
-
     mac = ':'.join(("%012x" % random.randint(0, 0xFFFFFFFFFFFF))[i:i+2] for i in range(0, 12, 2))
     return mac
 
 
 def change_mac(interface, mac):
     """Change MAC address for user specified interface."""
-    print(f'[+] Changeing MAC address for interface {interface} to {mac}\n')
+    print(f'[+] Changing MAC address for interface {interface} to {mac}\n')
     # interface down
     subprocess.call(['ifconfig', interface, 'down'])
 
@@ -28,15 +27,15 @@ def change_mac(interface, mac):
     subprocess.call(['ifconfig', interface])
 
 
-def get_arguements():
-    """Get user supplied arguements from terminal."""
+def get_arguments():
+    """Get user supplied arguments from terminal."""
 
     parser = optparse.OptionParser()
-    # arguements
+    # arguments
     parser.add_option('-i', '--interface', dest='interface', help='Interface to change MAC address')
     parser.add_option('-m', '--mac', dest='mac', help='Specify new MAC address. Type "random" for random MAC.')
 
-    (options, arguements) = parser.parse_args()
+    (options, arguments) = parser.parse_args()
 
     # add call to random_mac
     if options.mac == 'random':
@@ -50,5 +49,5 @@ def get_arguements():
     return options
 
 
-options = get_arguements()
+options = get_arguments()
 change_mac(options.interface, options.mac)
