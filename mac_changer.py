@@ -42,12 +42,13 @@ def get_arguements():
     if options.mac == 'random':
         generate_mac()
 
-    if not options.interface :
+    if not options.interface:
         parser.error('[-] Please specify an interface, use --help for more info.')
     elif not options.mac:
         parser.error('[-] Please specify a new MAC, use --help for more info.')
 
     return options
+
 
 options = get_arguements()
 change_mac(options.interface, options.mac)
