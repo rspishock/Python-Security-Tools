@@ -15,11 +15,13 @@ The script was originally created using PycharmCE on a Late 2018 MacBook Pro, 32
 ##### Imports
 The following modules were used in this script:
 - subprocess
-  - This module was used to execute system level commands
+  - This module is used to execute system level commands
 - optparse
-  - This module was used to parse arguements from the command line
+  - This module is used to parse arguments from the command line
 - random
-  - This module was used to generate random MAC addresses
+  - This module is used to generate random MAC addresses
+- re
+  - This module is used to parse the output of the if config command and extract the current MAC address for the interface.
 
 
 ##### Usage
