@@ -11,10 +11,10 @@ A collection of security and pen testing tools written in Python
 The script was originally created using PycharmCE on a Late 2018 MacBook Pro, 32GB RAM, 6 Core Intel i9, with 1TB SSD.
 
 
-#### mac_changer.py
+### mac_changer.py
 A simple script which can be used to alter the MAC address of Linux based systems.  The user is able to specify a MAC address for ease of recognition or have the script generate a random MAC address.
 
-##### Imports
+#### Imports
 The following modules were used in this script:
 - subprocess
   - This module is used to execute system level commands
@@ -30,15 +30,15 @@ python3 mac_changer.py -i --interface <value> -m --mac <value>
 
 
 
-#### network_scanner.py
+### network_scanner.py
 A simple script which can be used to send and receive ARP packets for host identification.  Script will return target IPs and MAC addresses.
 
-##### Imports
+#### Imports
 The following modules were used in this script:
 - scapy
   - This module is used to manipulate data packets.
   - __Must be installed on Python3__
-    - pip install scapy
+    - pip3 install scapy-python3
   
 - argparse
   - This module is used to parse arguments from the command line
