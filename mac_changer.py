@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """A simple script used to alter a systems MAC address.  User provides the interface, and can supply a MAC address or
-choose to use a randomly generated one.  Script uses Python 3"""
+   choose to use a randomly generated one.  Script uses Python 3"""
 
 import subprocess
-import optparse
+import argparse
 import random
 import re
 
@@ -16,12 +16,12 @@ def generate_mac():
 
 def get_arguments():
     """Get user supplied arguments from terminal."""
-    parser = optparse.OptionParser()
+    parser = argparse.ArgumentParser()
     # arguments
-    parser.add_option('-i', '--interface', dest='interface', help='Interface to change MAC address')
-    parser.add_option('-m', '--mac', dest='mac', help='Specify new MAC address. Type "random" for random MAC.')
+    parser.add_argument('-i', '--interface', dest='interface', help='Interface to change MAC address')
+    parser.add_argument('-m', '--mac', dest='mac', help='Specify new MAC address. Type "random" for random MAC.')
 
-    (options, arguments) = parser.parse_args()
+    (options) = parser.parse_args()
 
     # add call to random_mac
     if options.mac == 'random':

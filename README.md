@@ -18,7 +18,7 @@ A simple script which can be used to alter the MAC address of Linux based system
 The following modules were used in this script:
 - subprocess
   - This module is used to execute system level commands
-- optparse
+- argparse
   - This module is used to parse arguments from the command line
 - random
   - This module is used to generate random MAC addresses
@@ -31,12 +31,17 @@ python3 mac_changer.py -i --interface <value> -m --mac <value>
 
 
 #### network_scanner.py
-A simple script which can be used to send and receive ARP packets for host identification.
+A simple script which can be used to send and receive ARP packets for host identification.  Script will return target IPs and MAC addresses.
 
 ##### Imports
 The following modules were used in this script:
 - scapy
   - This module is used to manipulate data packets.
+  - __Must be installed on Python3__
+    - pip install scapy
+  
+- argparse
+  - This module is used to parse arguments from the command line
 
 ##### Usage
-python3 network_scanner.py 
+python3 network_scanner.py -t --target <ip address/range>
