@@ -4,6 +4,7 @@ A collection of security and pen testing tools written in Python
 ## Tools
 ### mac_changer.py
 ### network_scanner.py
+### arp_spoof.py
 
 
 ##### Tools and technologies used
@@ -45,3 +46,21 @@ The following modules were used in this script:
 
 ##### Usage
 python3 network_scanner.py -t --target <ip address/range>
+
+
+### arp_spoof.py
+A simple script which can be used to initialize a MiTM attack.
+
+#### Imports
+The following modules were used in this script:
+- scapy
+  - This module is used to manipulate data packets.
+  - __Must be installed on Python3__
+    - pip3 install scapy-python3
+- argparse
+  - This module is used to parse arguments from the command line
+- time
+  - This module is used to control the delay in resending spoof packets
+
+##### Usage
+python3 arp_spoof.py 
