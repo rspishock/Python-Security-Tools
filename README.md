@@ -5,6 +5,7 @@ A collection of security and pen testing tools written in Python
 ### mac_changer.py
 ### network_scanner.py
 ### arp_spoof.py
+### packet_sniffer.py
 
 
 ##### Tools and technologies used
@@ -64,3 +65,18 @@ The following modules were used in this script:
 
 ##### Usage
 python3 arp_spoof.py 
+
+### packet_sniffer.py
+A simple script used to sniff packets coming across the network and extract data.
+
+#### Imports
+The following modules were used in this script:
+- scapy.layers
+  - This module is used to search packets for specified layers
+- scapy.all
+  - This module is used to sniff the network for packets.
+- argparse
+  - This module is used to parse arguments from the command line
+
+##### Usage
+python3 mac_changer.py -i --interface <value>
