@@ -10,8 +10,8 @@ A collection of security and pen testing tools written in Python
 ### dns_spoof.py
 
 
-##### Tools and technologies used
-##### Environment
+### Tools and technologies used
+#### Environment
 The script was originally created using PycharmCE on a Late 2018 MacBook Pro, 32GB RAM, 6 Core Intel i9, with 1TB SSD.
 
 
