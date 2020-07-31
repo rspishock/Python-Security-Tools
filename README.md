@@ -6,6 +6,7 @@ A collection of security and pen testing tools written in Python
 ### network_scanner.py
 ### arp_spoof.py
 ### packet_sniffer.py
+### net_cut.py
 
 
 ##### Tools and technologies used
