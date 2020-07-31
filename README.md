@@ -112,3 +112,19 @@ The following modules were used in this script:
 
 ##### Usage
 python3 mac_changer.py
+
+
+### replace_download.py
+A simple script used to intercept download requests and replace the good payload with malicious payloads.
+
+#### Imports
+The following modules were used in this script:
+- netfilterqueue
+  - This module is used to 
+- scapy.all
+  - This module is used to sniff the network for packets.
+ - argparse
+  - This module is used to parse arguments from the command line
+
+##### Usage
+python3 replace_download.py
