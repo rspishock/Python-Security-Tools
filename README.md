@@ -1,5 +1,5 @@
 # Python-Security-Tools
-A collection of security and pen testing tools written in Python
+A collection of security and pen testing tools written in Python3
 
 ## Tools
 ### mac_changer.py
