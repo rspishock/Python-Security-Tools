@@ -7,6 +7,7 @@ A collection of security and pen testing tools written in Python
 ### arp_spoof.py
 ### packet_sniffer.py
 ### net_cut.py
+### dns_spoof.py
 
 
 ##### Tools and technologies used
@@ -81,3 +82,33 @@ The following modules were used in this script:
 
 ##### Usage
 python3 mac_changer.py -i --interface <value>
+
+
+### net_cut.py
+
+
+#### Imports
+The following modules were used in this script:
+- netfilterqueue
+  - This module is used to 
+- scapy.all
+  - This module is used to sniff the network for packets.
+
+##### Usage
+python3 net_cut.py
+
+
+### dns_spoof.py
+A simple script used to intercept and spoof DNS packets.
+
+#### Imports
+The following modules were used in this script:
+- netfilterqueue
+  - This module is used to 
+- scapy.all
+  - This module is used to sniff the network for packets.
+ - argparse
+  - This module is used to parse arguments from the command line
+
+##### Usage
+python3 mac_changer.py
