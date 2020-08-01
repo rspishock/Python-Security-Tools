@@ -10,10 +10,12 @@ A collection of security and pen testing tools written in Python3
 ### - dns_spoof.py
 
 
-### Tools and technologies used
+## Tools and technologies used
 #### Environment
 The script was originally created using PycharmCE on a Late 2018 MacBook Pro, 32GB RAM, 6 Core Intel i9, with 1TB SSD.
 
+
+## Scripts
 
 ### mac_changer.py
 A simple script which can be used to alter the MAC address of Linux based systems.  The user is able to specify a MAC address for ease of recognition or have the script generate a random MAC address.
