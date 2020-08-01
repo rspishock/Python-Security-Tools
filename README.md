@@ -2,12 +2,12 @@
 A collection of security and pen testing tools written in Python3
 
 ## Tools
-### mac_changer.py
-### network_scanner.py
-### arp_spoof.py
-### packet_sniffer.py
-### net_cut.py
-### dns_spoof.py
+### - mac_changer.py
+### - network_scanner.py
+### - arp_spoof.py
+### - packet_sniffer.py
+### - net_cut.py
+### - dns_spoof.py
 
 
 ### Tools and technologies used
