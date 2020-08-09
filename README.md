@@ -132,3 +132,19 @@ The following modules were used in this script:
 
 ##### Usage
 python3 replace_download.py
+
+
+### code_injector.py
+A simple script used to inject code into.
+
+#### Imports
+The following modules were used in this script:
+- netfilterqueue
+  - This module is used to 
+- scapy.all
+  - This module is used to sniff the network for packets.
+ - re
+  - This module is used to create regular expressions
+
+##### Usage
+python3 code_injector.py
