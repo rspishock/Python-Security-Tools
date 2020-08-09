@@ -8,6 +8,7 @@ A collection of security and pen testing tools written in Python3
 ### - packet_sniffer.py
 ### - net_cut.py
 ### - dns_spoof.py
+### - replace_downloads.py
 
 
 ## Tools and technologies used
