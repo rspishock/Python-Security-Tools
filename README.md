@@ -149,3 +149,15 @@ The following modules were used in this script:
 
 ##### Usage
 python3 code_injector.py
+
+
+### arpspoof_detector.py
+A simple script used to detect the presence of an ARP spoofing attack.
+
+#### Imports
+The following modules were used in this script:
+- scapy.all
+  - This module is used to sniff the network for packets.
+
+##### Usage
+python3 arpspoof_detector.py
