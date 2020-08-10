@@ -9,7 +9,8 @@ A collection of security and pen testing tools written in Python3
 ### - net_cut.py
 ### - dns_spoof.py
 ### - replace_downloads.py
-### - code_injectory.py
+### - code_injector.py
+### - arpspoof_detector.py
 
 
 ## Tools and technologies used
