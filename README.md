@@ -142,13 +142,15 @@ A simple script used to inject code into.
 The following modules were used in this script:
 - netfilterqueue
   - This module is used to 
+- argparse
+  - This module is used to parse arguments from the command line
 - scapy.all
   - This module is used to sniff the network for packets.
- - re
+- re
   - This module is used to create regular expressions
 
 ##### Usage
-python3 code_injector.py
+python3 code_injector.py -i --ip <attacking IP> -p --port <port number>
 
 
 ### arpspoof_detector.py
