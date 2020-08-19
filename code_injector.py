@@ -62,7 +62,7 @@ def process_packet(packet):
 
 options = get_arguments()                                                           # captures argument from terminal
 ip = options.ip
-port= options.port
+port = options.port
 
 queue = netfilterqueue.NetfilterQueue()
 queue.bind(0, process_packet)
