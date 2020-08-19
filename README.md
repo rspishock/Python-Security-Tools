@@ -1,22 +1,33 @@
 # Python-Security-Tools
-A collection of security and pen testing tools written in Python3
+A collection of security and pen testing tools primarily written in Python3
 
 ## Tools
-### - mac_changer.py
-### - network_scanner.py
-### - arp_spoof.py
-### - packet_sniffer.py
-### - net_cut.py
-### - dns_spoof.py
-### - replace_downloads.py
-### - code_injector.py
-### - arpspoof_detector.py
+#### - mac_changer.py
+#### - network_scanner.py
+#### - arp_spoof.py
+#### - packet_sniffer.py
+#### - net_cut.py
+#### - dns_spoof.py
+#### - replace_downloads.py
+#### - code_injector.py
+#### - arpspoof_detector.py
 
 
 ## Tools and technologies used
-#### Environment
-The script was originally created using PycharmCE on a Late 2018 MacBook Pro, 32GB RAM, 6 Core Intel i9, with 1TB SSD.
+#### Coding environment
+##### Hardware
+- Late 2018 MacBook Pro
+    - 32GB RAM
+    - 6 Core Intel i9 processor
+    - 1TB SSD
 
+##### Software
+- MacOS Catalina
+- PycharmCE
+- Kite
+
+##### Github repo
+- https://github.com/rspishock/Python-Security-Tools
 
 ## Scripts
 
@@ -150,7 +161,7 @@ The following modules were used in this script:
   - This module is used to create regular expressions
 
 ##### Usage
-python3 code_injector.py -i --ip <attacking IP> -p --port <port number>
+python3 code_injector.py -i --ip (attacking IP) -p --port (port number)
 
 
 ### arpspoof_detector.py
