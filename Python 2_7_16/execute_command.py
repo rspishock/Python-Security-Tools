@@ -1,6 +1,6 @@
-#! /usr/bin/env/python3
+#! /usr/bin/python
 """
-   Uses Python 3"""
+   Uses Python 2.7.16"""
 
 import subprocess
 
