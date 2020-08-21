@@ -3,6 +3,8 @@ A collection of security and pen testing tools primarily written in Python.
 
 I have included versions of the scripts in both Python 2.7.16 and 3.8.0.
 
+While Python 2.x has reached end of life, scripts are being included for backwards compatibility in the even that Python 3.x is not available.
+
 ## Tools
 #### - mac_changer.py
 #### - network_scanner.py
