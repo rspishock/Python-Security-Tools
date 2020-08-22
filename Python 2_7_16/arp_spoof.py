@@ -52,7 +52,7 @@ try:
         spoof(target_ip, client_ip)                                                 # spoof client
         spoof(client_ip, target_ip)                                                 # spoof target
         sent_packets_count += 2
-        print(f'\r[+] Packets sent: {str(sent_packets_count)}', end="")             # overwrites status
+        print('\r[+] Packets sent: ' + str(sent_packets_count), end="")             # overwrites status
         time.sleep(2)
 except KeyboardInterrupt:
     print('\n[+] Detected CTRL + C ..... Resetting ARP tables.... Please Wait.\n')
