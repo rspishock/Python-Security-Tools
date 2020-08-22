@@ -34,9 +34,9 @@ def scan(ip):
 
 def print_result(results_list):
     """Prints output of scan function to terminal."""
-    print(f'IP\t\t\t\tMAC Address\n' + '-' * 75)                                    # output header
+    print('IP\t\t\t\tMAC Address\n' + '-' * 75)                                    # output header
     for client in results_list:
-        print(f'{client["ip"]}\t\t{client["mac"]}')
+        print(client["ip"] + '\t\t' + client["mac"])
 
 
 options = get_arguments()                                                           # captures argument from terminal
