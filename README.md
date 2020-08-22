@@ -50,6 +50,10 @@ The following modules were used in this script:
   - This module is used to parse the output of the if config command and extract the current MAC address for the interface.
 
 ##### Usage
+__Python 2.7.x__
+python mac_changer.py -i --interface <value> -m --mac <value>
+
+__Python 3__
 python3 mac_changer.py -i --interface <value> -m --mac <value>
 
 
@@ -68,6 +72,10 @@ The following modules were used in this script:
   - This module is used to parse arguments from the command line
 
 ##### Usage
+__Python 2.7.x
+python network_scanner.py -t --target <ip address/range>
+
+__Python 3__
 python3 network_scanner.py -t --target <ip address/range>
 
 
@@ -86,6 +94,10 @@ The following modules were used in this script:
   - This module is used to control the delay in resending spoof packets
 
 ##### Usage
+__Python 2.7.x__
+python arp_spoof.py
+
+__Python 3__
 python3 arp_spoof.py 
 
 ### packet_sniffer.py
@@ -101,6 +113,10 @@ The following modules were used in this script:
   - This module is used to parse arguments from the command line
 
 ##### Usage
+__Python 2.7.x__
+python3 mac_changer.py -i --interface <value>
+
+__Python 3__
 python3 mac_changer.py -i --interface <value>
 
 
@@ -115,6 +131,10 @@ The following modules were used in this script:
   - This module is used to sniff the network for packets.
 
 ##### Usage
+__Python 2.7.x__
+python net_cut.py
+
+__Python 3__
 python3 net_cut.py
 
 
@@ -131,6 +151,10 @@ The following modules were used in this script:
   - This module is used to parse arguments from the command line
 
 ##### Usage
+__Python 2.7.x__
+python mac_changer.py
+
+__Python 3__
 python3 mac_changer.py
 
 
@@ -147,6 +171,10 @@ The following modules were used in this script:
   - This module is used to parse arguments from the command line
 
 ##### Usage
+__Python 2.7.x__
+python replace_download.py
+
+__Python 3__
 python3 replace_download.py
 
 
@@ -177,4 +205,8 @@ The following modules were used in this script:
   - This module is used to sniff the network for packets.
 
 ##### Usage
+__Python 2.7.x__
+python arpsoff_detector.py
+
+__Python 3__
 python3 arpspoof_detector.py
