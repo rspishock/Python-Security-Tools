@@ -231,3 +231,20 @@ python execute_command.py -e --email (email address to send output to) -p --pass
 
 __Python 3__
 python3 execute_command.py -e --email (email address to send output to) -p --password (email password)
+
+
+
+### download.py
+A simple script used to download files to the target system.
+
+#### Imports
+The following modules were used in this script:
+- requests
+    - This module allows the script to send requests to the Internet.
+
+##### Usage
+__Python 2.7.x__
+python download.py
+
+__Python 3__
+python3 download.py
