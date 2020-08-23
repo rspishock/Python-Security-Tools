@@ -1,16 +1,16 @@
-#! /usr/bin/python
+#!/usr/bin/env python3
 """A simple script used to download files to the target system.
-   Uses Python 2.7.16"""
+   Uses Python 3"""
 
-import optparse
+import argparse
 import requests
 
 
 def get_arguments():
     """Get user supplied arguments from terminal."""
-    parser = optparse.OptionParser()
+    parser = argparse.ArgumentParser()
     # arguments
-    parser.add_option('-t', '--target', dest='target', help='File to obtain from the Internet.')
+    parser.add_argument('-t', '--target', dest='target', help='File to obtain from the Internet.')
 
     (options, arguments) = parser.parse_args()
 
@@ -26,7 +26,7 @@ def download(url):
     with open(file_name, 'wb') as out_file:
         """Writes output to file on local disk"""
         out_file.write(get_response.content)
-    
+
 
 options = get_arguments()
-download(options.target)
+download('')

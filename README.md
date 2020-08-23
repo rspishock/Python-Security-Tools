@@ -241,10 +241,14 @@ A simple script used to download files to the target system.
 The following modules were used in this script:
 - requests
     - This module allows the script to send requests to the Internet.
+- optparse
+    - This module is used to parse arguments from the command line
+- argparse __*Python 3 only*__
+    - This module is used to parse arguments from the command line
 
 ##### Usage
 __Python 2.7.x__
-python download.py
+python download.py -t --target (target URL)
 
 __Python 3__
-python3 download.py
+python3 download.py -t --target (target URL)
