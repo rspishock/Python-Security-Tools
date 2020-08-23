@@ -4,4 +4,9 @@
 
 import requests
 
+def download(url):
+    """"""
+    get_request = requests.get(url)
+    
 
+download('')
