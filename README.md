@@ -227,7 +227,7 @@ The following modules were used in this script:
 
 ##### Usage
 __Python 2.7.x__
-python execute_command.py -i --interface (wifi interface) -n --name (network name) -e --email (email address to send output to) -p --password (email password)
+python execute_command.py -e --email (email address to send output to) -p --password (email password)
 
 __Python 3__
-python3 execute_command.py -i --interface (wifi interface) -n --name (network name) -e --email (email address to send output to) -p --password (email password)
+python3 execute_command.py -e --email (email address to send output to) -p --password (email password)
