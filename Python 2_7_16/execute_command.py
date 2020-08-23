@@ -1,5 +1,5 @@
 #! /usr/bin/python
-"""A simple script used to connect to a wireless network
+"""A simple script used to extract wifi settings from a target host.
    Uses Python 2.7.16"""
 
 import subprocess

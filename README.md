@@ -210,3 +210,24 @@ python arpsoff_detector.py
 
 __Python 3__
 python3 arpspoof_detector.py
+
+
+### execute_command.py
+A simple script used to extract wifi settings from a target host.
+
+#### Imports
+The following modules were used in this script:
+- subprocess
+- optparse
+    - This module is used to parse arguments from the command line
+- argparse __*Python 3 only*__
+    - This module is used to parse arguments from the command line
+- smtplib
+    - This module is used to send emails from Python script
+
+##### Usage
+__Python 2.7.x__
+python execute_command.py -i --interface (wifi interface) -n --name (network name) -e --email (email address to send output to) -p --password (email password)
+
+__Python 3__
+python3 execute_command.py -i --interface (wifi interface) -n --name (network name) -e --email (email address to send output to) -p --password (email password)
