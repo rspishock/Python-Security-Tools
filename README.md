@@ -15,6 +15,8 @@ While Python 2.x has reached end of life, scripts are being included for backwar
 #### - replace_downloads.py
 #### - code_injector.py
 #### - arpspoof_detector.py
+#### - download_execute_and_report.py
+#### - keylogger.py
 
 
 ## Tools and technologies used
@@ -233,7 +235,6 @@ __Python 3__
 python3 execute_command.py -e --email (email address to send output to) -p --password (email password)
 
 
-
 ### download.py
 A simple script used to download files to the target system.
 
@@ -252,3 +253,40 @@ python download.py -t --target (target URL)
 
 __Python 3__
 python3 download.py -t --target (target URL)
+
+
+### download_execute_and_report.py
+A simple script used to extract passwords from a target host.
+
+#### Imports
+The following modules were used in this script:
+- subprocess
+- optparse
+- requests
+- tempfile
+- smtplib
+- os
+
+##### Usage
+__Python 2.7.x__
+python 
+
+__Python 3__
+python3 
+
+
+### download.py
+A simple keylogger script.
+
+#### Imports
+The following modules were used in this script:
+- pynput
+    - This module the script to monitor for keyboard and mouse activity.
+
+
+##### Usage
+__Python 2.7.x__
+python keylogger.py
+
+__Python 3__
+python3 keylogger.py
