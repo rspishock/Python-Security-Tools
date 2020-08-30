@@ -275,14 +275,17 @@ __Python 3__
 python3 
 
 
-### download.py
-A simple keylogger script.
+### keylogger.py
+A simple keylogger class.
 
 #### Imports
 The following modules were used in this script:
 - pynput
-    - This module the script to monitor for keyboard and mouse activity.
-
+    - This module allows the script to monitor for keyboard and mouse activity.
+- threading
+    - This module 
+- smtplib
+    - 
 
 ##### Usage
 __Python 2.7.x__
