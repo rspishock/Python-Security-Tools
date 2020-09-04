@@ -293,3 +293,37 @@ python keylogger.py
 
 __Python 3__
 python3 keylogger.py
+
+
+### reverse_backdoor.py
+A simple backdoor script.
+
+#### Imports
+The following modules were used in this script:
+- socket
+- optparse
+- subprocess
+
+##### Usage
+__Python 2.7.x__
+python keylogger.py
+
+__Python 3__
+python3 keylogger.py
+
+
+
+### listener.py
+A simple listener script.
+
+#### Imports
+The following modules were used in this script:
+- socket
+- optparse
+
+##### Usage
+__Python 2.7.x__
+python keylogger.py
+
+__Python 3__
+python3 keylogger.py
