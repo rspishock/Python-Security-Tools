@@ -335,17 +335,14 @@ python3 keylogger.py
 
 
 ### execute_command.py
-A simple script used to extract wifi settings from a target host.
+A simple script to crawl a URL checking for all available links.
 
 #### Imports
 The following modules were used in this script:
-- subprocess
+- requests
 - optparse
-    - This module is used to parse arguments from the command line
-- argparse __*Python 3 only*__
-    - This module is used to parse arguments from the command line
-- smtplib
-    - This module is used to send emails from Python script
+- urlparse
+- re
 
 ##### Usage
 __Python 2.7.x__

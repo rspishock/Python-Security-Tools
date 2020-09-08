@@ -1,5 +1,5 @@
 #! /usr/bin/python
-"""A simple reverse backdoor script.
+"""A simple script to crawl a URL checking for all available links.
    Uses Python 2.7.16"""
 
 
