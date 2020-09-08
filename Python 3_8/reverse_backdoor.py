@@ -3,7 +3,7 @@
    Uses Python 3.8"""
 
 import subprocess
-import optparse
+import argparse
 import base64
 import socket
 import json
