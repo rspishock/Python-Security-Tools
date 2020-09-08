@@ -18,6 +18,7 @@ While Python 2.x has reached end of life, scripts are being included for backwar
 #### - arpspoof_detector.py
 #### - download_execute_and_report.py
 #### - keylogger.py
+#### - spider.py
 
 
 ## Tools and technologies used
@@ -331,3 +332,24 @@ python keylogger.py
 
 __Python 3__
 python3 keylogger.py
+
+
+### execute_command.py
+A simple script used to extract wifi settings from a target host.
+
+#### Imports
+The following modules were used in this script:
+- subprocess
+- optparse
+    - This module is used to parse arguments from the command line
+- argparse __*Python 3 only*__
+    - This module is used to parse arguments from the command line
+- smtplib
+    - This module is used to send emails from Python script
+
+##### Usage
+__Python 2.7.x__
+python spider.py -t --target (target URL)
+
+__Python 3__
+python3 spider.py -t --target (target URL)
