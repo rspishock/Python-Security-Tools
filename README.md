@@ -1,6 +1,6 @@
 # Python-Security-Tools (WIP)
 #__*All scripts are currently untested*__
-A collection of security and pen testing tools primarily written in Python.
+A collection of security and pen testing tools and malware written in Python.
 
 I have included versions of the scripts in both Python 2.7.16 and 3.8.0.
 
