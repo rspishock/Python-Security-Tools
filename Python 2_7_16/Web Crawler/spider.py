@@ -20,8 +20,6 @@ def get_arguments():
     return options
 
 
-
-
 def extract_links_from(url):
     response = requests.get(url)
     return re.findall('(?:href=")(.*?)"', response.content)

