@@ -1,16 +1,16 @@
-#! /usr/bin/python
+#!/usr/bin/env python3
 """A simple vulnerability scanner script.
-   Uses Python 2.7.16"""
+   Uses Python 3"""
 
-import optparse
+import argparse
 import scanner
 
 
 def get_arguments():
     """Get user supplied arguments from terminal."""
-    parser = optparse.OptionParser()
+    parser = argparse.ArgumentParser()
     # arguments
-    parser.add_option('-t', '--target', dest='target', help='Target URL.')
+    parser.add_argument('-t', '--target', dest='target', help='Target URL.')
 
     (options, arguments) = parser.parse_args()
 

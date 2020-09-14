@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#!/usr/bin/env python3
 """A class for the vulnerability scanner script.
-   Uses Python 2.7.16"""
+   Uses Python 3"""
 
+import urllib.parse as urlparse
 from bs4 import BeautifulSoup
-import urlparse2
 import requests
 import re
 
@@ -17,7 +17,7 @@ class Scanner:
 
     def extract_links_from(self, url):
         response = self.session.get(url)
-        return re.findall('(?:href=")(.*?)"', response.content)
+        return re.findall('(?:href=")(.*?)"', response.content.decode(errors='ignore'))
 
     def crawl(self, url=None):
         if url == None:
@@ -26,7 +26,7 @@ class Scanner:
         href_links = self.extract_links_from(self, url)
 
         for link in href_links:
-            link = urlparse2.urljoin(url, link)  # will append target_url if missing from link
+            link = urlparse.urljoin(url, link)  # will append target_url if missing from link
 
             if '#' in link:
                 link = link.split('#')[0]
@@ -43,7 +43,7 @@ class Scanner:
 
     def submit_form(self, form, value, url):
         action = form.get('action')
-        post_url = urlparse2.urljoin(url, action)
+        post_url = urlparse.urljoin(url, action)
         method = form.get("method")
 
         inputs_list = form.findAll('input')
@@ -86,10 +86,10 @@ class Scanner:
         url = url.replace('=', '=' + xss_test_script)
         response = self.session.get(url)
 
-        return xss_test_script in response.content
+        return xss_test_script.encode() in response.content
 
     def test_xss_in_form(self, form, url):
         xss_test_script = '<sCript>alert(\'test\')</scriPt>'
         response = self.submit_form(form, xss_test_script, url)
 
-        return xss_test_script in response.content
+        return xss_test_script.encode() in response.content
