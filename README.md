@@ -38,9 +38,9 @@ While Python 2.x has reached end of life, scripts are being included for backwar
 - https://github.com/rspishock/Python-Security-Tools
 
 ## Scripts
-## Python 2.7.x - Tested/Approved
 
 ### mac_changer.py
+## Python 2.7.x - Tested/Approved
 A simple script which can be used to alter the MAC address of Linux based systems.  The user is able to specify a MAC address for ease of recognition or have the script generate a random MAC address.
 
 #### Imports
