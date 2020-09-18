@@ -47,9 +47,6 @@ def change_mac(interface, new_mac):
     # interface up
     subprocess.call(['ifconfig', interface, 'up'])
 
-    # # verifies new MAC
-    # subprocess.call(['ifconfig', interface])
-
 
 def get_current_mac(interface):
     """Returns current MAC address, if available."""
@@ -63,13 +60,13 @@ def get_current_mac(interface):
 
 
 options = get_arguments()
-current_mac = get_current_mac(options.interface)    # gets original MAC address
+current_mac = get_current_mac(options.interface)        # gets original MAC address
 print('Current MAC: ' + str(current_mac))
 
-change_mac(options.interface, options.mac)          # changes MAC address
+change_mac(options.interface, options.new_mac)          # changes MAC address
 
-current_mac = get_current_mac(options.interface)    # gets MAC address after change
-if current_mac == options.mac:
+current_mac = get_current_mac(options.interface)        # gets MAC address after change
+if current_mac == options.new_mac:
     print('[+] MAC address was successfully changed to ' + current_mac)
 else:
     print('[-] MAC address was not changed')
