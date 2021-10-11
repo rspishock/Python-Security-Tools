@@ -3,7 +3,7 @@ __*All scripts are currently untested*__
 
 A collection of security and pen testing tools and malware written in Python.
 
-I have included versions of the scripts in both Python 2.7.16 and 3.8.0.
+I have included versions of the scripts in both Python 2.7.16 and 3.8.0.  Python 2.7 scripts are project scripts from the Udemy course Learn Python & Ethical Hacking by Scratch from Zaid Sabih.  Python3 scripts were not a part of the course material and were converted by me.  Some additional functionality beyond the original source material of the Python2 scritps were also added by me and are not part of the course material.
 
 While Python 2.x has reached end of life, scripts are being included for backwards compatibility in the event that Python 3.x is not available on target machine.
 
